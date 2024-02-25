@@ -33,13 +33,19 @@ function PersonalForm({ personalInfo, setPersonalInfo }) {
 
             <p className="error" id="personal_error"></p>
             <div>
-                <input type="text" name="firstName" placeholder="First Name" />
-                <input type="text" name="lastName" placeholder="Last Name" />
+                <label htmlFor="first_name">First Name</label>
+                <input id="first_name" type="text" name="firstName" placeholder="Your First Name" />
+
+                <label htmlFor="last_name">Last Name</label>
+                <input id="last_name" type="text" name="lastName" placeholder="Your Last Name" />
             </div>
 
             <div>
-                <input type="email" name="email" placeholder="Email" />
-                <input type="tel" name="phone" placeholder="Phone Number" />
+                <label htmlFor="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="Your Email" />
+
+                <label htmlFor="phone">Phone Number</label>
+                <input id="phone" type="tel" name="phone" placeholder="Your Phone Number" />
             </div>
         </form>
     );
@@ -87,13 +93,19 @@ function EducationForm({ educationInfo, setEducationInfo, editId, setEditId, for
 
             <p className="error" id="education_error"></p>
             <div>
-                <input name="university" type="text" placeholder="University" />
-                <input name="department" type="text" placeholder="Department" />
+                <label htmlFor="university">University</label>
+                <input id="university" name="university" type="text" placeholder="University" />
+
+                <label htmlFor="department">Department</label>
+                <input id="department" name="department" type="text" placeholder="Department" />
             </div>
 
             <div>
-                <input name="start" type="date" placeholder="Start year" />
-                <input name="end" type="date" placeholder="End year" />
+                <label htmlFor="start">Start Date</label>
+                <input id="start" name="start" type="date" placeholder="Start date" />
+
+                <label htmlFor="end">End Date</label>
+                <input id="end" name="end" type="date" placeholder="End date" />
             </div>
         </form>
     );
@@ -142,13 +154,19 @@ function ExperienceForm({ workInfo, setWorkInfo, editId, setEditId, form, setFor
 
             <p className="error" id="work_error"></p>
             <div>
-                <input name="company" type="text" placeholder="Company" />
-                <input name="position" type="text" placeholder="Position Title" />
+                <label htmlFor="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Where did you work.." />
+
+                <label htmlFor="position">Position Title</label>
+                <input id="position" name="position" type="text" placeholder="What was your role" />
             </div>
 
             <div>
-                <input name="start" type="date" placeholder="Start date" />
-                <input name="end" type="date" placeholder="End date" />
+                <label htmlFor="sDate">Start Date</label>
+                <input id="sDate" name="start" type="date" placeholder="Start date" />
+
+                <label htmlFor="eDate">End Date</label>
+                <input id="eDate" name="end" type="date" placeholder="End date" />
             </div>
         </form>
     );
@@ -159,6 +177,7 @@ function Form(props) {
 
     return (
         <section className="form-container">
+            <h2>Portfolio Details</h2>
             <PersonalForm {...{ personalInfo, setPersonalInfo }} />
             <EducationForm {...{ educationInfo, setEducationInfo, editId, setEditId, form, setForm }} />
             <ExperienceForm {...{ workInfo, setWorkInfo, editId, setEditId, form, setForm }} />
