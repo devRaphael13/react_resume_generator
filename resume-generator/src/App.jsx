@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Form from "./Form";
+import Resume from "./resume";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [personalInfo, setPersonalInfo] = useState({});
+    const [educationInfo, setEducationInfo] = useState([]);
+    const [workInfo, setWorkInfo] = useState([]);
+    const [editId, setEditId] = useState("");
+    const [form, setForm] = useState("");
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const props = {
+        personalInfo,
+        setPersonalInfo,
+        educationInfo,
+        setEducationInfo,
+        workInfo,
+        setWorkInfo,
+        editId,
+        setEditId,
+        form,
+        setForm,
+    };
+
+    return (
+        <div className="container">
+            <Form {...props} />
+            <Resume {...props} />
+        </div>
+    );
 }
 
-export default App
+//TODO: Make sure the right form is selected and other forms disabled when clicked on a particular section item. The Id and form to use will be generated automatically
+
+export default App;
