@@ -74,8 +74,10 @@ form {
 }
 
 .about {
-    background-color: blue;
+    background-color: var(--dark);
     padding: 2rem;
+    border: 1px solid var(--light);
+    border-bottom: none;
 }
 
 .about svg {
@@ -95,6 +97,73 @@ form {
 
 .about p:first-of-type {
     font-style: italic;
+}
+
+.resume {
+    padding: 4rem;
+    border: 1px solid var(--light);
+    border-top: none;
+}
+
+.resume h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--dark);
+}
+
+.resume p {
+    color: var(--dark);
+}
+
+.resume h1:last-of-type {
+    margin-top: 4rem;
+}
+
+.resume>div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.education,
+.work {
+    padding: 1rem;
+    background-color: beige;
+}
+
+.education h3,
+.work h3 {
+    color: var(--dark);
+}
+
+.education h3:first-of-type,
+.work h3:first-of-type {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.education p, .work p {
+    font-style: italic;
+    font-size: smaller;
+}
+
+.education button, .work button {
+    padding: 0.5rem 1.75rem;
+    background: var(--dark);
+}
+
+.education>div, .work>div {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.education svg, .work svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: -0.25rem;
+    margin-right: 0.125rem;
 }
 
 .form-title {

@@ -36,36 +36,60 @@ function Resume({ personalInfo, educationInfo, setEducationInfo, workInfo, setWo
                     </div>
                 )}
 
-                <div className="resume-container">
+                <div className="resume">
                     {educationInfo.length ? <h1>Education</h1> : ""}
-                    {educationInfo.map((element) => (
-                        <div key={element.id} className="education">
-                            <p>{element.university}</p>
-                            <p>Department of {element.department}</p>
-                            <p>
-                                {element.start} - {element.end}
-                            </p>
-                            <div>
-                                <button onClick={(e) => edit(e, "educationForm", element.id)}>Edit</button>
-                                <button onClick={(e) => del(e, "education", element.id)}>Delete</button>
+                    <div>
+                        {educationInfo.map((element) => (
+                            <div key={element.id} className="education">
+                                <p>
+                                    {element.start} / {element.end}
+                                </p>
+                                <h3>{element.university}</h3>
+                                <h3>Department of {element.department}</h3>
+                                <div>
+                                    <button onClick={(e) => edit(e, "educationForm", element.id)}>
+                                        <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.975 3.055a.6.6 0 0 1 .85 0l3.6 3.6a.6.6 0 0 1 0 .85l-12 12a.601.601 0 0 1-.202.132l-6 2.4a.6.6 0 0 1-.78-.78l2.4-6a.6.6 0 0 1 .132-.202l12-12ZM15.85 5.88l2.75 2.752 1.552-1.552L17.4 4.328 15.85 5.88Zm1.903 3.6L15 6.728l-7.8 7.8v.352h.6a.6.6 0 0 1 .6.6v.6H9a.6.6 0 0 1 .6.6v.6h.352l7.8-7.8ZM6.039 15.69l-.128.127-1.833 4.585 4.585-1.833.127-.127a.599.599 0 0 1-.39-.562v-.6h-.6a.6.6 0 0 1-.6-.6v-.6h-.6a.6.6 0 0 1-.561-.39Z"></path>
+                                        </svg>
+                                        Edit
+                                    </button>
+                                    <button onClick={(e) => del(e, "education", element.id)}>
+                                        <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.96 3.6h3.6a.6.6 0 0 1 .6.6v1.2h-4.8V4.2a.6.6 0 0 1 .6-.6Zm5.4 1.8V4.2a1.8 1.8 0 0 0-1.8-1.8h-3.6a1.8 1.8 0 0 0-1.8 1.8v1.2H5.168a.6.6 0 0 0-.012 0H3.96a.6.6 0 0 0 0 1.2h.646L5.63 19.392A2.4 2.4 0 0 0 8.022 21.6h7.476a2.4 2.4 0 0 0 2.393-2.208L18.915 6.6h.645a.6.6 0 0 0 0-1.2h-1.194a.61.61 0 0 0-.012 0H15.36Zm2.35 1.2-1.015 12.696a1.2 1.2 0 0 1-1.197 1.104H8.022a1.2 1.2 0 0 1-1.196-1.104L5.811 6.6H17.71ZM8.726 7.8a.6.6 0 0 1 .633.564l.6 10.2a.6.6 0 0 1-1.197.072l-.602-10.2a.6.6 0 0 1 .564-.636h.002Zm6.07 0a.6.6 0 0 1 .563.636l-.6 10.2a.6.6 0 1 1-1.197-.072l.6-10.2a.6.6 0 0 1 .633-.564Zm-3.036 0a.6.6 0 0 1 .6.6v10.2a.6.6 0 1 1-1.2 0V8.4a.6.6 0 0 1 .6-.6Z"></path>
+                                        </svg>
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
 
                     {workInfo.length ? <h1>Experience</h1> : ""}
-                    {workInfo.map((element) => (
-                        <div key={element.id} className="work">
-                            <p>{element.position}</p>
-                            <p>at {element.company}</p>
-                            <p>
-                                {element.start} - {element.end}
-                            </p>
-                            <div>
-                                <button onClick={(e) => edit(e, "workForm", element.id)}>Edit</button>
-                                <button onClick={(e) => del(e, "work", element.id)}>Delete</button>
+                    <div>
+                        {workInfo.map((element) => (
+                            <div key={element.id} className="work">
+                                <p>
+                                    {element.start} / {element.end}
+                                </p>
+                                <h3>{element.position}</h3>
+                                <h3>at {element.company}</h3>
+                                <div>
+                                    <button onClick={(e) => edit(e, "workForm", element.id)}>
+                                        <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.975 3.055a.6.6 0 0 1 .85 0l3.6 3.6a.6.6 0 0 1 0 .85l-12 12a.601.601 0 0 1-.202.132l-6 2.4a.6.6 0 0 1-.78-.78l2.4-6a.6.6 0 0 1 .132-.202l12-12ZM15.85 5.88l2.75 2.752 1.552-1.552L17.4 4.328 15.85 5.88Zm1.903 3.6L15 6.728l-7.8 7.8v.352h.6a.6.6 0 0 1 .6.6v.6H9a.6.6 0 0 1 .6.6v.6h.352l7.8-7.8ZM6.039 15.69l-.128.127-1.833 4.585 4.585-1.833.127-.127a.599.599 0 0 1-.39-.562v-.6h-.6a.6.6 0 0 1-.6-.6v-.6h-.6a.6.6 0 0 1-.561-.39Z"></path>
+                                        </svg>
+                                        Edit
+                                    </button>
+                                    <button onClick={(e) => del(e, "work", element.id)}>
+                                        <svg width="46" height="46" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.96 3.6h3.6a.6.6 0 0 1 .6.6v1.2h-4.8V4.2a.6.6 0 0 1 .6-.6Zm5.4 1.8V4.2a1.8 1.8 0 0 0-1.8-1.8h-3.6a1.8 1.8 0 0 0-1.8 1.8v1.2H5.168a.6.6 0 0 0-.012 0H3.96a.6.6 0 0 0 0 1.2h.646L5.63 19.392A2.4 2.4 0 0 0 8.022 21.6h7.476a2.4 2.4 0 0 0 2.393-2.208L18.915 6.6h.645a.6.6 0 0 0 0-1.2h-1.194a.61.61 0 0 0-.012 0H15.36Zm2.35 1.2-1.015 12.696a1.2 1.2 0 0 1-1.197 1.104H8.022a1.2 1.2 0 0 1-1.196-1.104L5.811 6.6H17.71ZM8.726 7.8a.6.6 0 0 1 .633.564l.6 10.2a.6.6 0 0 1-1.197.072l-.602-10.2a.6.6 0 0 1 .564-.636h.002Zm6.07 0a.6.6 0 0 1 .563.636l-.6 10.2a.6.6 0 1 1-1.197-.072l.6-10.2a.6.6 0 0 1 .633-.564Zm-3.036 0a.6.6 0 0 1 .6.6v10.2a.6.6 0 1 1-1.2 0V8.4a.6.6 0 0 1 .6-.6Z"></path>
+                                        </svg>
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
