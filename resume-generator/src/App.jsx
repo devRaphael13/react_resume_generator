@@ -30,6 +30,4 @@ function App() {
     );
 }
 
-//TODO: Make sure the right form is selected and other forms disabled when clicked on a particular section item. The Id and form to use will be generated automatically
-
 export default App;

@@ -13,7 +13,7 @@ function Resume({ personalInfo, educationInfo, setEducationInfo, workInfo, setWo
     };
 
     return (
-        <section>
+        <section className="resume-container">
             {Object.keys(personalInfo).length >= 1 && (
                 <div className="about">
                     <h1>{personalInfo.firstName + " " + personalInfo.lastName}</h1>
