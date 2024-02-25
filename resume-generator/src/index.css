@@ -50,10 +50,6 @@ form {
     border-radius: 0.5rem;
 }
 
-.selected {
-    border-color: var(--light);
-}
-
 ::placeholder {
     font-style: italic;
 }
@@ -130,6 +126,16 @@ form {
 .work {
     padding: 1rem;
     background-color: beige;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+}
+
+.selected {
+    border-color: var(--dark);
+}
+
+.selected-form {
+    border-color: var(--light);
 }
 
 .education h3,

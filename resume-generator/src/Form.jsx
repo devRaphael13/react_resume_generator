@@ -64,9 +64,18 @@ function EducationForm({ educationInfo, setEducationInfo, editId, setEditId, for
         }
 
         if (editId && form && form === "educationForm") {
+            const formElem = document.getElementById("education");
             setEducationInfo(educationInfo.map((info) => (info.id === editId ? { ...info, ...newData } : info)));
             setForm("");
             setEditId("");
+            formElem.classList.remove("selected-form");
+
+            for (let info of document.getElementsByClassName("education")) {
+                if (info.dataset.id === editId) {
+                    info.classList.remove("selected");
+                    break;
+                }
+            }
             return;
         }
 
@@ -81,7 +90,7 @@ function EducationForm({ educationInfo, setEducationInfo, editId, setEditId, for
     };
 
     return (
-        <form onSubmit={handleSubmit} action=".">
+        <form id="education" onSubmit={handleSubmit} action=".">
             <div className="form-title">
                 <h3>Education</h3>
                 <button type="submit">
@@ -124,9 +133,19 @@ function ExperienceForm({ workInfo, setWorkInfo, editId, setEditId, form, setFor
         }
 
         if (editId && form && form === "workForm") {
+            const formElem = document.getElementById("work");
             setWorkInfo(workInfo.map((info) => (info.id === editId ? { ...info, ...newData } : info)));
             setForm("");
             setEditId("");
+
+            formElem.classList.remove("selected-form");
+            for (let info of document.getElementsByClassName("work")) {
+                if (info.dataset.id === editId) {
+                    info.classList.remove("selected");
+                    break;
+                }
+            }
+
             return;
         }
 
@@ -142,7 +161,7 @@ function ExperienceForm({ workInfo, setWorkInfo, editId, setEditId, form, setFor
     };
 
     return (
-        <form onSubmit={handleSubmit} action=".">
+        <form id="work" onSubmit={handleSubmit} action=".">
             <div className="form-title">
                 <h3>Work Experience</h3>
                 <button type="submit">

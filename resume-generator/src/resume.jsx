@@ -1,8 +1,18 @@
 function Resume({ personalInfo, educationInfo, setEducationInfo, workInfo, setWorkInfo, setEditId, setForm }) {
     const edit = (e, form, id) => {
+        const [data, type] = form === "educationForm" ? [document.getElementsByClassName("education"), document.getElementById("education")] : [document.getElementsByClassName("work"), document.getElementById("work")];
+        
+        for (let i of data) {
+            if (i.dataset.id === id) {
+                i.classList.add("selected")
+                break
+            }
+        }
+
+        type.classList.add("selected-form")
+
         setEditId(id);
         setForm(form);
-        //TODO: Indicate the item being edited by applying styles
     };
 
     const del = (e, section, id) => {
@@ -40,7 +50,7 @@ function Resume({ personalInfo, educationInfo, setEducationInfo, workInfo, setWo
                     {educationInfo.length ? <h1>Education</h1> : ""}
                     <div>
                         {educationInfo.map((element) => (
-                            <div key={element.id} className="education">
+                            <div key={element.id} data-id={element.id} className="education">
                                 <p>
                                     {element.start} / {element.end}
                                 </p>
@@ -67,7 +77,7 @@ function Resume({ personalInfo, educationInfo, setEducationInfo, workInfo, setWo
                     {workInfo.length ? <h1>Experience</h1> : ""}
                     <div>
                         {workInfo.map((element) => (
-                            <div key={element.id} className="work">
+                            <div key={element.id} data-id={element.id} className="work">
                                 <p>
                                     {element.start} / {element.end}
                                 </p>
